@@ -1,7 +1,8 @@
 from projeto.models.endereco import Endereco
 
 class Pessoa:
-    def __init__(self, nome: str, telefone: str, email: str, endereco: Endereco) -> None:
+    def __init__(self, id: int, nome: str, telefone: str, email: str, endereco: Endereco) -> None:
+        self.id = id
         self.nome = nome
         self.telefone = telefone
         self.email = email

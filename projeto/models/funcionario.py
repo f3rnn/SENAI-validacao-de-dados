@@ -4,13 +4,11 @@ from projeto.models.enum.genero import Genero
 from projeto.models.enum.setores import Setor
 from projeto.models.fisica import Fisica
 
-
 class Funcionario(Fisica):
-    def __init__(self, nome: str, telefone: str, email: str, endereco: Endereco,
-                  sexo: Genero, estadoCivil: EstadoCivil, dataNascimento: str,
-                  cpf:str,rg:str,matricula:str,setor:Setor,salario:float) -> None:
-        super().__init__(nome, telefone, email, endereco, sexo, estadoCivil, dataNascimento)
-    
+    def __init__(self, id: int, nome: str, telefone: str, email: str, endereco: Endereco,
+                 sexo: Genero, estadoCivil: EstadoCivil, dataNascimento: str,
+                 cpf:str,rg:str,matricula:str,setor:Setor,salario:float) -> None:
+        super().__init__(id, nome, telefone, email, endereco, sexo, estadoCivil, dataNascimento)
         self.cpf = cpf
         self.rg = rg
         self.matricula = matricula

@@ -3,11 +3,10 @@ from projeto.models.enum.estadocivil import EstadoCivil
 from projeto.models.pessoa import Pessoa
 from projeto.models.enum.genero import Genero
 
-
 class Fisica(Pessoa):
-    def __init__(self, nome: str, telefone: str, email: str, endereco: Endereco,
+    def __init__(self, id: int, nome: str, telefone: str, email: str, endereco: Endereco,
                  sexo:Genero,estadoCivil:EstadoCivil,dataNascimento:str) -> None:
-        super().__init__(nome, telefone, email, endereco)
+        super().__init__(id, nome, telefone, email, endereco)
         self.sexo = sexo
         self.estadoCivil = estadoCivil
         self.dataNascimento = dataNascimento

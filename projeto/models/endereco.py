@@ -1,4 +1,3 @@
-
 from projeto.models.enum.uf import UnidadeFederativa
 
 
