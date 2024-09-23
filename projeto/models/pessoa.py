@@ -10,6 +10,7 @@ class Pessoa:
     
     def __str__(self) -> str:
         return (
+            f"\nid: {self.id}"
             f"\nnome: {self.nome}"
             f"\ntelefone: {self.telefone}"
             f"\nemail: {self.email}"

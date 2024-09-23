@@ -5,9 +5,9 @@ from projeto.models.enum.uf import UnidadeFederativa
 
 @pytest.fixture
 def pessoa_valida():
-    pessoa = Pessoa("José Tigrão", "9899-9999", "bondedotigrao@gmail.com",
-                    Endereco("alameda", "123", "ali na esquina", "40.000-000", "Salvador", UnidadeFederativa.BAHIA))
-    return pessoa
+    pessoa = Pessoa(18, "José Tigrão", "9899-9999", "bondedotigrão@gmail.com",
+                    Endereco("alameda", "123", "ali na esquina", "40.000-000", "salvador", UnidadeFederativa.BAHIA))
+    return pessoa 
 
 def test_atributo_nome_valido(pessoa_valida):
     assert pessoa_valida.nome == "José Tigrão"
