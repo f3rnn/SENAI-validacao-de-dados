@@ -14,7 +14,7 @@ class Funcionario(Fisica, ABC):
         self.rg = rg
         self.matricula = matricula
         self.setor = setor
-        self.salario = salario
+        self.salario = self._verificar_salario(salario)
     
     def __str__(self) -> str:
         return (
@@ -25,3 +25,10 @@ class Funcionario(Fisica, ABC):
             f"\nSetor: {self.setor.value}"
             f"\nSalário: {self.salario}"
             )
+    
+    def _verificar_salario(self, salario):
+        if salario < 0:
+            raise ValueError("salário não pode ser negativo")
+        if not isinstance (salario, float):
+            raise TypeError("dado incorreto")
+        return salario
