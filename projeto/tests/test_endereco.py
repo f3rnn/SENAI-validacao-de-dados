@@ -1,5 +1,4 @@
 import pytest
-from projeto.models.pessoa import Pessoa
 from projeto.models.endereco import Endereco
 from projeto.models.enum.uf import UnidadeFederativa
 
