@@ -1,7 +1,7 @@
 from projeto.models.endereco import Endereco
 from projeto.models.enum.estadocivil import EstadoCivil
 from projeto.models.enum.genero import Genero
-from projeto.models.fisica import Fisica
+from projeto.models.pessoafisica import Fisica
 
 class Cliente(Fisica):
     def __init__(self, id: int, nome: str, telefone: str, email: str, endereco: Endereco,

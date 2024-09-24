@@ -1,10 +1,11 @@
+from abc import ABC, abstractmethod
 from projeto.models.endereco import Endereco
 from projeto.models.enum.estadocivil import EstadoCivil
 from projeto.models.enum.genero import Genero
 from projeto.models.enum.setores import Setor
-from projeto.models.fisica import Fisica
+from projeto.models.pessoafisica import Fisica
 
-class Funcionario(Fisica):
+class Funcionario(Fisica, ABC):
     def __init__(self, id: int, nome: str, telefone: str, email: str, endereco: Endereco,
                  sexo: Genero, estadoCivil: EstadoCivil, dataNascimento: str,
                  cpf:str,rg:str,matricula:str,setor:Setor,salario:float) -> None:
