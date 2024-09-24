@@ -5,7 +5,7 @@ from projeto.models.enum.setores import Setor
 from projeto.models.funcionario import Funcionario
 
 
-class Engenheiro(Funcionario):
+class Advogado(Funcionario):
     def __init__(self, nome: str, telefone: str, email: str, endereco: Endereco,
                   sexo: Genero, estadoCivil: EstadoCivil, dataNascimento: str,
                     cpf: str, rg: str, matricula: str, setor: Setor, salario: float,
