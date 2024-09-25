@@ -19,13 +19,16 @@ class Pessoa:
         )
     
     def _verificar_id(self, id):
-        if id < 0:
-            raise ValueError("valor inválido")
         if not isinstance(id, int):
             raise TypeError("valor inválido")
+        if id < 0:
+            raise ValueError("valor inválido")
         return id
     
     def _verificar_nome(self, nome):
         if not isinstance(nome, str) or not nome.strip():
             raise ValueError("o nome não pode estar em branco")
         return nome
+
+    def _verificar_cep(self, cep):
+        return super._verificar_cep(cep)

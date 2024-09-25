@@ -5,13 +5,19 @@ from projeto.models.enum.genero import Genero
 from projeto.models.enum.setores import Setor
 from projeto.models.pessoafisica import Fisica
 
+class RgError(Exception):
+    pass
+
+class CpfError(Exception):
+    pass
+
 class Funcionario(Fisica, ABC):
     def __init__(self, id: int, nome: str, telefone: str, email: str, endereco: Endereco,
                  sexo: Genero, estadoCivil: EstadoCivil, dataNascimento: str,
                  cpf:str,rg:str,matricula:str,setor:Setor,salario:float) -> None:
         super().__init__(id, nome, telefone, email, endereco, sexo, estadoCivil, dataNascimento)
-        self.cpf = cpf
-        self.rg = rg
+        self.cpf = self._verificar_cpf(cpf)
+        self.rg = self._verificar_rg(rg)
         self.matricula = matricula
         self.setor = setor
         self.salario = self._verificar_salario(salario)
@@ -27,8 +33,22 @@ class Funcionario(Fisica, ABC):
             )
     
     def _verificar_salario(self, salario):
-        if salario < 0:
-            raise ValueError("salário não pode ser negativo")
         if not isinstance (salario, float):
             raise TypeError("dado incorreto")
+        if salario < 0:
+            raise ValueError("salário não pode ser negativo")
         return salario
+    
+    def _verificar_cpf(self, cpf):
+        if len(cpf) > 14:
+            raise CpfError("CPF inválido")
+    
+    def _verificar_rg(self, rg):
+        if len(rg) > 12:
+            raise RgError("RG inválido")
+
+    def _verificar_id(self, id):
+        return super()._verificar_id(id)
+    
+    def _verificar_nome(self, nome):
+        return super()._verificar_nome(nome)
