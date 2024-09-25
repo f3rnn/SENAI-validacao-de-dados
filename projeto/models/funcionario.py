@@ -42,10 +42,12 @@ class Funcionario(Fisica, ABC):
     def _verificar_cpf(self, cpf):
         if len(cpf) > 14:
             raise CpfError("CPF inválido")
+        return cpf
     
     def _verificar_rg(self, rg):
         if len(rg) > 12:
             raise RgError("RG inválido")
+        return rg
 
     def _verificar_id(self, id):
         return super()._verificar_id(id)
