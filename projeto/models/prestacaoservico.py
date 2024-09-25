@@ -12,3 +12,12 @@ class PrestacaoServico(Juridica):
         return (f"{super().__str__()}"
                 f"\ninicio do contrato: {self.contratoInicio}"
                 f"\nfim do contraro: {self.contratoFim}")
+    
+    def _verificar_id(self, id):
+        return super()._verificar_id(id)
+    
+    def _verificar_nome(self, nome):
+        return super()._verificar_nome(nome)
+    
+    def _verificar_cep(self, cep):
+        return super()._verificar_cep(cep)
