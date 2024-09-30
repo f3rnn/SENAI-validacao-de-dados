@@ -77,14 +77,14 @@ def test_crea_valido(medico_valido):
 
 #testando exceções
 def test_id_tipo_errado(medico_valido):
-    with pytest.raises(TypeError, match = "valor inválido"):
+    with pytest.raises(TypeError, match = "o id deve ser um número inteiro"):
         Medico("f", "José Tigrão", "9899-9999", "bondedotigrao@gmail.com",
                     Endereco("alameda", "123", "ali na esquina", "40.000-000", "salvador", UnidadeFederativa.BAHIA),
                     Genero.MASCULINO,EstadoCivil.CASADO,
                     "24/09/1999", "825.863.350-31", "27.795.968-8", "007", Setor.ENGENHARIA, 7000.0,"32575756")
 
 def test_id_valor_negativo(medico_valido):
-    with pytest.raises(ValueError, match = "valor inválido"):
+    with pytest.raises(ValueError, match = "o id não pode ser um número negativo"):
         Medico(-18, "José Tigrão", "9899-9999", "bondedotigrao@gmail.com",
                     Endereco("alameda", "123", "ali na esquina", "40.000-000", "salvador", UnidadeFederativa.BAHIA),
                     Genero.MASCULINO,EstadoCivil.CASADO,
@@ -98,7 +98,7 @@ def test_nome_vazio(medico_valido):
                     "24/09/1999", "825.863.350-31", "27.795.968-8", "007", Setor.ENGENHARIA, 7000.0,"32575756")
 
 def test_salario_tipo_errado(medico_valido):
-    with pytest.raises(TypeError, match = "dado incorreto"):
+    with pytest.raises(TypeError, match = "o salário precisa ser um número real"):
         Medico(18, "José Tigrão", "9899-9999", "bondedotigrao@gmail.com",
                     Endereco("alameda", "123", "ali na esquina", "40.000-000", "salvador", UnidadeFederativa.BAHIA),
                     Genero.MASCULINO,EstadoCivil.CASADO,

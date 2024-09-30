@@ -53,13 +53,13 @@ def test_produto_valido(fornecedor_valido):
 
 #testando exceções
 def test_id_tipo_errado(fornecedor_valido):
-    with pytest.raises(TypeError, match = "valor inválido"):
+    with pytest.raises(TypeError, match = "o id deve ser um número inteiro"):
         Fornecedor("f", "José Tigrão", "9899-9999", "bondedotigrao@gmail.com",
                     Endereco("alameda", "123", "ali na esquina", "40.000-000", "salvador", UnidadeFederativa.BAHIA),
                     "68.582.878/0001-16","5277216-46","Hardware")
 
 def test_id_valor_negativo(fornecedor_valido):
-    with pytest.raises(ValueError, match = "valor inválido"):
+    with pytest.raises(ValueError, match = "o id não pode ser um número negativo"):
         Fornecedor(-18, "José Tigrão", "9899-9999", "bondedotigrao@gmail.com",
                     Endereco("alameda", "123", "ali na esquina", "40.000-000", "salvador", UnidadeFederativa.BAHIA),
                     "68.582.878/0001-16","5277216-46","Hardware")

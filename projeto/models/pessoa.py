@@ -20,9 +20,9 @@ class Pessoa:
     
     def _verificar_id(self, id):
         if not isinstance(id, int):
-            raise TypeError("valor inválido")
+            raise TypeError("o id deve ser um número inteiro")
         if id < 0:
-            raise ValueError("valor inválido")
+            raise ValueError("o id não pode ser um número negativo")
         return id
     
     def _verificar_nome(self, nome):

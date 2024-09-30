@@ -34,7 +34,7 @@ class Funcionario(Fisica, ABC):
     
     def _verificar_salario(self, salario):
         if not isinstance (salario, float):
-            raise TypeError("dado incorreto")
+            raise TypeError("o salário precisa ser um número real")
         if salario < 0:
             raise ValueError("salário não pode ser negativo")
         return salario

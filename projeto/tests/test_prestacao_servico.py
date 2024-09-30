@@ -56,13 +56,13 @@ def test_fim_contrato_valido(prestacao_servico_valida):
 
 #testando exceções
 def test_id_tipo_errado(prestacao_servico_valida):
-    with pytest.raises(TypeError, match = "valor inválido"):
+    with pytest.raises(TypeError, match = "o id deve ser um número inteiro"):
         PrestacaoServico("f", "José Tigrão", "9899-9999", "bondedotigrao@gmail.com",
                     Endereco("alameda", "123", "ali na esquina", "40.000-000", "salvador", UnidadeFederativa.BAHIA),
                     "68.582.878/0001-16","5277216-46","01/09/23","01/09/24")
 
 def test_id_valor_negativo(prestacao_servico_valida):
-    with pytest.raises(ValueError, match = "valor inválido"):
+    with pytest.raises(ValueError, match = "o id não pode ser um número negativo"):
         PrestacaoServico(-18, "José Tigrão", "9899-9999", "bondedotigrao@gmail.com",
                     Endereco("alameda", "123", "ali na esquina", "40.000-000", "salvador", UnidadeFederativa.BAHIA),
                     "68.582.878/0001-16","5277216-46","01/09/23","01/09/24")
